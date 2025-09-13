@@ -12,3 +12,4 @@ C:\Users\frank.farzaneh\Documents\Programmering 1\Quiz\Quiz\obj\Debug\net9.0\ref
 C:\Users\frank.farzaneh\Documents\Programmering 1\Quiz\Quiz\obj\Debug\net9.0\Quiz.pdb
 C:\Users\frank.farzaneh\Documents\Programmering 1\Quiz\Quiz\obj\Debug\net9.0\Quiz.genruntimeconfig.cache
 C:\Users\frank.farzaneh\Documents\Programmering 1\Quiz\Quiz\obj\Debug\net9.0\ref\Quiz.dll
+C:\Users\frank.farzaneh\Documents\Programmering 1\Quiz\Quiz\obj\Debug\net9.0\Quiz.sourcelink.json

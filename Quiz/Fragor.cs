@@ -1,12 +1,14 @@
+
 public class Question
 {
-    public int Points;
+    int Points;
     public string QuestionText;
     public string Answer;
-    public void Ask()
+    public bool Ask()
     {
         Console.WriteLine(QuestionText);
         string PAnswer = Console.ReadLine().ToLower();
+
         while (PAnswer != "a" && PAnswer != "b" && PAnswer != "c")
         {
             Console.WriteLine("Please answer A, B or C");
@@ -14,14 +16,14 @@ public class Question
         }
         if (PAnswer == Answer)
         {
-            Points++;
             Console.WriteLine("Correct! Great job, +1 point");
+            return true;
         }
         else
         {
             Console.WriteLine("YOU SUCK!! NO points for LOSERS");
+            return false;
         }
-        Console.WriteLine($"You now have {Points} points!");
-        Console.ReadLine();
+
     }
 }
