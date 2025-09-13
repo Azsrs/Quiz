@@ -1,8 +1,6 @@
 
-public class Question
-{
-    int Points;
-    public string QuestionText;
+public class Question //Klass för frågor
+{   public string QuestionText;
     public string Answer;
     public bool Ask()
     {
@@ -11,17 +9,17 @@ public class Question
 
         while (PAnswer != "a" && PAnswer != "b" && PAnswer != "c")
         {
-            Console.WriteLine("Please answer A, B or C");
+            Console.WriteLine("Vänligen svara A, B eller C");
             PAnswer = Console.ReadLine().ToLower();
         }
         if (PAnswer == Answer)
         {
-            Console.WriteLine("Correct! Great job, +1 point");
+            Console.WriteLine("Rätt! Snyggt gjort!");
             return true;
         }
         else
         {
-            Console.WriteLine("YOU SUCK!! NO points for LOSERS");
+            Console.WriteLine("Fel svar!! Du är sämst!");
             return false;
         }
 
