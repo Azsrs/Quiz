@@ -1,9 +1,10 @@
 ﻿
 int Points = 0;
 
-List<Question> questions = new List<Question> // lista där varje objekt är en instans av klass
+//Frågor efter klassen Question
+List<Question> questions = new List<Question> 
 {
-new Question { //frågor byggda efter klassen Question
+new Question { 
 QuestionText = "Hur många invånare bor i Iran \nA.92 miljoner B.27 miljoner C.150 miljoner" ,
 Answer = "a"
 },
@@ -15,8 +16,22 @@ new Question {
 QuestionText = "Vem är TE24Cs flitigaste, roligaste, snyggaste elev? \nA.Inte Frank B.Frank C.Nästan Frank",
 Answer = "b"
 },
+new Question {
+QuestionText = "Vilket år grundades YouTube \nA.2005 B.2010 C.2008",
+Answer = "a"
+},
+new Question {
+QuestionText = "Vilket stockholmsgymnasium har högst antagningspoäng? \nA.Kungsholmens Gymnasium B.Norra Real C.Södra Latin",
+Answer = "b"
+},
+new Question {
+QuestionText = "Vad är Tugsbayars efternamn \nA.Galdabrakh B.Galgabarkh C.Galbadrakh",
+Answer = "C"
+},
 };
-foreach (Question q in questions) //loop ställer frågor från listan till listana är slut
+
+//Ställer frågor
+foreach (Question q in questions) 
 {
     if (q.Ask())
     {
@@ -25,20 +40,22 @@ foreach (Question q in questions) //loop ställer frågor från listan till list
     Console.WriteLine($"Du har nu {Points} poäng. \nTryck ENTER för att fortsätta"); //uppmanar om poängantal, förklarar hur man går vidare
     Console.ReadLine();
 }
+
+//Räkna ihop poäng
 Console.WriteLine("Det var det! \nVi har räknat ihop dina poäng och kommit fram till en slutsats"); //fake loading screen för komisk effekt
 Console.ReadLine();
 Console.WriteLine("loading..");
 Thread.Sleep(300);
-if (Points <= 2) //otroligt få poäng
-{
-    Console.WriteLine("Du är sämst!");
-    Console.ReadLine();
-}
-else if (Points == questions.Count) //alla rätt
+if (Points == questions.Count) //alla rätt
 {
     Console.WriteLine("Snyggt gjort! Alla rätt!!!");
-    Console.ReadLine();
-
 }
-
+else if (Points >= questions.Count / 2)
+{
+    Console.WriteLine("Bra försökt! Försök igen om du törs!!");
+}
+else if (Points <= 2) //inte många poäng
+{
+    Console.WriteLine("Wow! Du är otroligt dålig!");
+}
 Console.ReadLine();
