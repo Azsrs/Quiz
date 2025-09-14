@@ -52,7 +52,7 @@ if (Points == questions.Count) //alla rätt
 }
 else if (Points >= questions.Count / 2)
 {
-    Console.WriteLine("Bra försökt! Försök igen om du törs!!");
+    Console.WriteLine("Bra försökt! Testa igen om du törs!!");
 }
 else if (Points <= 2) //inte många poäng
 {
