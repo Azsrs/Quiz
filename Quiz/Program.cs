@@ -1,10 +1,10 @@
 ﻿
 int Points = 0;
 
-//Frågor efter klassen Question
-List<Question> questions = new List<Question> 
+//Lista med frågor efter klassen Question
+List<Question> questions = new List<Question>
 {
-new Question { 
+new Question {
 QuestionText = "Hur många invånare bor i Iran \nA.92 miljoner B.27 miljoner C.150 miljoner" ,
 Answer = "a"
 },
@@ -30,32 +30,35 @@ Answer = "C"
 },
 };
 
+Console.WriteLine("Välkommen till FrankQuiz! Du kommer ställas inför unviersums svåraste frågor,\ndin intelligens och heder står på spel.. play if you dare\nPress ENTER to start");
+Console.ReadLine();
 //Ställer frågor
-foreach (Question q in questions) 
+int questionnumber = 1; //räknevärde för frågesiffra
+foreach (Question q in questions)
 {
+    Console.WriteLine($"Fråga {questionnumber}");
     if (q.Ask())
     {
         Points++;
     }
+    questionnumber++;
     Console.WriteLine($"Du har nu {Points} poäng. \nTryck ENTER för att fortsätta"); //uppmanar om poängantal, förklarar hur man går vidare
     Console.ReadLine();
 }
 
 //Räkna ihop poäng
-Console.WriteLine("Det var det! \nVi har räknat ihop dina poäng och kommit fram till en slutsats"); //fake loading screen för komisk effekt
+Console.WriteLine("Det var det! \nVi har räknat ihop dina poäng och kommit fram till en slutsats\nVänligen tryck ENTER för resultat");
 Console.ReadLine();
-Console.WriteLine("loading..");
-Thread.Sleep(300);
 if (Points == questions.Count) //alla rätt
 {
-    Console.WriteLine("Snyggt gjort! Alla rätt!!!");
+    Console.WriteLine($"Wow, {Points} poäng! Snyggt gjort! Alla rätt!!!");
 }
 else if (Points >= questions.Count / 2)
 {
-    Console.WriteLine("Bra försökt! Testa igen om du törs!!");
+    Console.WriteLine($"Eh, {Points} poäng.. Bra försökt! Testa igen om du törs!!");
 }
 else if (Points <= 2) //inte många poäng
 {
-    Console.WriteLine("Wow! Du är otroligt dålig!");
+    Console.WriteLine($"Wow! {Points} Du är otroligt dålig!");
 }
 Console.ReadLine();
